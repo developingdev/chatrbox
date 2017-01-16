@@ -1,0 +1,37 @@
+﻿@backgroundColor: #263238;
+@senderRadius: 2.4rem;
+
+@otherBackgroundColor:#e0f7fa;
+@otherColor: #000;
+
+@myBackgroundColor: #fffde7;
+@myColor: #000;
+@speechBubbleRadius:8px;
+
+
+@titleBoxHeight: 2.4rem;
+@speakerBoxHeight: 2.4rem;
+
+.titleBox{
+    height: @titleBoxHeight;
+    border:solid 1px red;
+}
+.chatterBox{
+    border:solid 1px green;
+    height:calc(~"100vh - @{titleBoxHeight} - @{speakerBoxHeight}");
+    overflow-y:auto;
+
+    .messageContainer{
+        border:solid 1px black;
+        max-width: 85vw;
+        float:left;
+        clear:both;
+        &.myMessage{
+            float:right;
+        }
+    }
+}
+.speakerBox{
+    border: solid 1px blue;
+    height:@speakerBoxHeight;
+}

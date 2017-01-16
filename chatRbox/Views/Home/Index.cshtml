@@ -1,0 +1,25 @@
+﻿@*<div class="row collapse titleBox">
+    <div class="column small-12">
+        <span>bumbleBubble</span>
+    </div>
+</div>*@
+<div class="wrapper">
+    <div class="row collapse chatterBox" id="chatterBox">
+        <div class="column small-12">
+            <div class="messagesBox" data-bind="template: { name: 'messageTemplate', foreach: chatLog }"></div>
+        </div>
+    </div>
+    <div class="speakerBox">
+        <input type="text" placeholder="say something..." class="inputBox" data-bind="textInput : messageText, event: {keypress: sendMessage}" />
+        <i class="material-icons md-48 sendMessageIcon" data-bind="click:sendMessageToServer()">mail_outline</i>
+    </div>
+</div>
+
+
+<script type="text/html" id="messageTemplate">
+    <div class="messageContainer" data-bind="css: {myMessage:sender == $root.userId()}">
+        <div class="messageWrapper" data-bind="css: {myMessage:sender == $root.userId()}">
+            <span data-bind="text: message" class="messageBox"></span>
+        </div>
+    </div>
+</script>

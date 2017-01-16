@@ -1,0 +1,22 @@
+﻿.titleBox {
+  height: 2.4rem;
+  border: solid 1px red;
+}
+.chatterBox {
+  border: solid 1px green;
+  height: calc(100vh - 2.4rem - 2.4rem);
+  overflow-y: auto;
+}
+.chatterBox .messageContainer {
+  border: solid 1px black;
+  max-width: 85vw;
+  float: left;
+  clear: both;
+}
+.chatterBox .messageContainer.myMessage {
+  float: right;
+}
+.speakerBox {
+  border: solid 1px blue;
+  height: 2.4rem;
+}

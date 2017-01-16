@@ -1,0 +1,141 @@
+﻿@yellow: #f2c83f;
+@teal: #3bbdca;
+@blue: #4a95ff;
+@white: #fff;
+
+@backgroundColor: #ffffff;
+@senderRadius: 2.4rem;
+
+@otherBackgroundColor:#28010f;
+@otherColor: #000;
+
+@myBackgroundColor: #fcdb4c;
+
+@speechBubbleRadius:0.6rem;
+@myColor: #29b6f6;
+
+@otherColor: #ffa726;
+@titleBoxHeight: 1.2rem;
+@speakerBoxHeight: 2.4rem;
+
+@sendIconSize: 2rem;
+
+body{
+    font-family:Helvetica, sans-serif;
+    background-color:#2e2e2e;
+    overflow:hidden;
+}
+
+
+//TO DO detect if phone - fill screen
+//if browser lock aspect ratio
+
+.wrapper{
+    max-width:calc(~"100vh / 1.6");
+    background-color: @backgroundColor;
+    margin:auto;
+}
+
+.titleBox{
+    height: @titleBoxHeight;
+    background-color:@myColor;
+    color:@otherColor;
+    font-weight:700;
+    text-align:center;
+    .roomId{
+        display:inline-block;
+        vertical-align:middle;
+    }
+    //border:solid 1px red;
+}
+.chatterBox{
+    //border:solid 1px green;
+    //padding-top:100px;
+    height:calc(~"100vh - @{speakerBoxHeight}");
+    overflow-y:auto;
+    width:100%;
+    .messageContainer{
+            -webkit-animation: fadeIn 750ms;
+    -moz-animation: fadeIn 750ms;
+    animation: fadeIn 750ms;
+
+        /*border:solid 1px @otherColor;
+        background-color:@backgroundColor;
+        color:@otherColor;*/
+        //border:solid 1px @otherColor;
+        background-color:@otherColor;
+        color:white;
+
+
+        max-width: 75%;
+        float:left;
+        clear:both;
+        margin: 0.4rem 0.8rem;
+        padding: 0.24rem 0.48rem;
+        border-radius: 0 @speechBubbleRadius @speechBubbleRadius @speechBubbleRadius;
+        &:first-child{
+            margin-top:100vh;
+        }
+        
+        &.myMessage{
+            /*background-color:@backgroundColor;
+            color:@myColor;*/
+
+            background-color:@myColor;
+            color:white;
+
+            border:solid 1px @myColor;
+            float:right;
+            border-radius: @speechBubbleRadius @speechBubbleRadius 0 @speechBubbleRadius;
+            
+        }
+    }
+}
+.speakerBox{
+    //border: solid 1px blue;
+    height:@speakerBoxHeight;
+    padding:0.16rem 0;
+    //text-align:justify;
+    text-align:center;
+    .inputBox{
+        -webkit-appearance: none;
+    -moz-appearance: none;
+        //background-color:@blue;
+        color:@myColor;
+        background-color:@white;
+        padding: 0 0.48rem;
+        border-radius:@speechBubbleRadius;
+        border:solid 1px @myColor;
+        height:calc(~"100% - 8px");
+        vertical-align:middle;
+        //width:100%;
+        width:calc(~"100% - @{sendIconSize} - 2rem");
+        //display:inline-block;
+    }
+
+
+        .sendMessageIcon{
+        //margin: auto;
+        color:@myColor;
+        //padding:0;
+        display:inline-block;
+        font-size:@sendIconSize;
+        vertical-align:middle;
+        text-align:center;
+        width:@sendIconSize;
+        cursor:pointer;
+        //width:@sendIconWidth;
+        //height:100%;
+    }
+    
+    
+}
+
+@keyframes fadeIn {
+    from {
+        opacity:0;
+          }
+    to {
+        opacity:1;
+    }
+}
