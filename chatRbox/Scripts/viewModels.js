@@ -20,9 +20,13 @@
 
     //Gets called once the vm is applied and connection to the hub is established
     self.init = function () {
-        var introMsg = 'Welcome to chatRbox!  This chat is completely anonymous and nothing is stored on the server.  Refresh the page to generate a new room.  Or use the existing URL to share with others!';
+        var introMsg = [];
+        introMsg.push("Welcome to chatRbox!");
+        introMsg.push("This chatroom is 100% anonymous with nothing stored on the server.");
+        introMsg.push("Refresh this page to generate a new room or use the existing URL to share and chat with others!");
         //Display welcome message
-        self.addMessageToLog('', introMsg);
+        for(var entry in introMsg)
+            self.addMessageToLog('', introMsg[entry]);
         //for(var i = 0; i < 20; i++){
         //    self.addMessageToLog('test', introMsg);
         //    self.addMessageToLog(self.userId(), introMsg);
